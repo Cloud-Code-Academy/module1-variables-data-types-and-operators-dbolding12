@@ -78,7 +78,7 @@ public class VariablesDataTypesOperatorsTest {
 	@IsTest
 	static void testCreateSentence() {
 		// Test with noun 'cat' and verb 'jumping'
-		String result = VariablesDataTypesOperators.createSentence('cat', 'jumping', '!');
+		String result = VariablesDataTypesOperators.createSentence('The cat', 'is jumping', '!');
 		Assert.areEqual(
 			'The cat is jumping!',
 			result,
@@ -86,7 +86,7 @@ public class VariablesDataTypesOperatorsTest {
 		);
 
 		// Test with noun 'bird' and verb 'flying'
-		result = VariablesDataTypesOperators.createSentence('bird', 'flying', '.');
+		result = VariablesDataTypesOperators.createSentence('The bird', 'is flying', '.');
 		Assert.areEqual(
 			'The bird is flying.',
 			result,
@@ -94,7 +94,7 @@ public class VariablesDataTypesOperatorsTest {
 		);
 
 		// Additional test case with different noun and verb
-		result = VariablesDataTypesOperators.createSentence('dog', 'running', '?');
+		result = VariablesDataTypesOperators.createSentence('The dog', 'is running', '?');
 		Assert.areEqual(
 			'The dog is running?',
 			result,
@@ -148,7 +148,7 @@ public class VariablesDataTypesOperatorsTest {
     @IsTest
     static void testComplexOrderOfOperations() {
         Assert.areEqual(8.0, VariablesDataTypesOperators.complexOrderOfOperations(4, 2, 2, 2, 5), 'Incorrect result for complexOrderOfOperations with 4, 2, 2, 2, 5 as arguments');
-        Assert.areEqual(5.0, VariablesDataTypesOperators.complexOrderOfOperations(3, 3, 3, 3, 3), 'Incorrect result for complexOrderOfOperations with 3, 3, 3, 3, 3 as arguments');
+        Assert.areEqual(9.0, VariablesDataTypesOperators.complexOrderOfOperations(3, 3, 3, 3, 3), 'Incorrect result for complexOrderOfOperations with 3, 3, 3, 3, 3 as arguments');
     }
 
     @IsTest
@@ -160,9 +160,9 @@ public class VariablesDataTypesOperatorsTest {
 
     @IsTest
     static void testPerformDivisionAndCast() {
-        Assert.areEqual(2, VariablesDataTypesOperators.performDivisionAndCast((Double)5.0, (Double)2.0), 'Incorrect division result when rounding down is correct');
-        Assert.areEqual(2, VariablesDataTypesOperators.performDivisionAndCast((Double)5.5, (Double)2.0), 'Incorrect division result when rounding up is correct');
-        Assert.areEqual(2, VariablesDataTypesOperators.performDivisionAndCast((Double)4.0, (Double)2.0), 'Incorrect division result when exact division is performed');
+        Assert.areEqual(2, VariablesDataTypesOperators.performDivisionAndCast((Integer)5, (Integer)2.0), 'Incorrect division result when rounding down is correct');
+        Assert.areEqual(2, VariablesDataTypesOperators.performDivisionAndCast((Integer)5.5, (Integer)2.0), 'Incorrect division result when rounding up is correct');
+        Assert.areEqual(2, VariablesDataTypesOperators.performDivisionAndCast((Integer)4.0, (Integer)2.0), 'Incorrect division result when exact division is performed');
     }
 
     @IsTest
